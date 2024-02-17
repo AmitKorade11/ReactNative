@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 export const myStyle = StyleSheet.create({
   appscreen: {
     flex: 1,
-    backgroundColor: "white",
+    backgroundColor: "#E0F2F1",
   },
   header: {
     flex: 1,

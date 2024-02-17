@@ -43,7 +43,6 @@ export default function App() {
     );
     allTodoList[indexOfUpdatedTodo] = updatedVal;
     setTodoList(allTodoList);
-    // saveTodoInStorage(allTodoList);
   }
 
   function deleteAlert(todo) {
@@ -55,7 +54,6 @@ export default function App() {
           console.log("deleting todo=> ", todo);
           const updatedList = todoList.filter((temp) => temp.id !== todo.id);
           setTodoList(updatedList);
-          // saveTodoInStorage(updatedList);
         },
       },
       { text: "Cancel", style: "cancel" },
@@ -102,7 +100,6 @@ export default function App() {
 
     console.log("Created a todo => ", updatedList);
     setTodoList(updatedList);
-    // saveTodoInStorage(updatedList);
     setShow(false);
   }
 
@@ -113,7 +110,6 @@ export default function App() {
       const tempList = JSON.parse(myTodoList);
       isEffectFromLoad = true;
       setTodoList(tempList);
-      console.log("todoList in db = ", tempList);
     } catch (error) {
       alert(error);
     }
@@ -126,7 +122,6 @@ export default function App() {
     );
     try {
       await AsyncStorage.setItem("@dbTodoList", JSON.stringify(updatedList));
-      // loadListFromStorage();
     } catch (error) {
       alert(error);
     }
