@@ -116,10 +116,7 @@ export default function App() {
   }
 
   async function saveTodoInStorage(updatedList) {
-    console.log(
-      "save todo in list of async storage\n currentList =>",
-      updatedList
-    );
+    console.log("save todo in list of async storage");
     try {
       await AsyncStorage.setItem("@dbTodoList", JSON.stringify(updatedList));
     } catch (error) {
