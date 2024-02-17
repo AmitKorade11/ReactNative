@@ -9,11 +9,14 @@ export const myStyle = StyleSheet.create({
     flex: 1,
     backgroundColor: "white",
   },
-  body: { flex: 6, backgroundColor: "white", margin: 16 },
+  body: { flex: 6, backgroundColor: "transparent" },
   bottomNavigation: {
-    height: 50,
-    backgroundColor: "lightgray",
+    height: 60,
+    backgroundColor: "#DCEDC8",
     padding: 16,
     justifyContent: "center",
+  },
+  listview: {
+    margin: 16,
   },
 });

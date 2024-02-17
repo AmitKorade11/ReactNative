@@ -15,7 +15,14 @@ export const hStyle = StyleSheet.create({
     padding: 5,
     fontSize: 20,
     fontWeight: "bold",
-    color: "blue",
+    color: "#1B5E20",
+  },
+  subtitle: {
+    padding: 5,
+    fontSize: 10,
+    fontWeight: "500",
+    color: "#388E3C",
+    marginTop: -12,
   },
   img: {
     padding: 2,
