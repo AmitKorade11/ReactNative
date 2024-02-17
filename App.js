@@ -4,7 +4,7 @@ import { Alert, ScrollView, Text, View } from "react-native";
 import { AppHeader } from "./component/header/AppHeader";
 import { ElementCard } from "./component/body/ElementCard";
 import { data } from "./data";
-import { map, useEffect, useState } from "react";
+import { map, useEffect, useRef, useState } from "react";
 import { BottomNavigation } from "./component/bottomNavigation/BottomNavigation";
 import { AddDialog } from "./component/util/AddDialog";
 import { AddButton } from "./component/util/AddButton";
@@ -18,6 +18,7 @@ export default function App() {
   const [todoList, setTodoList] = useState([]);
   const [selectedMenu, setSelectedMenu] = useState("All");
   const [show, setShow] = useState(false);
+  const scrollviewRef = useRef();
 
   useEffect(() => {
     loadListFromStorage();
@@ -122,6 +123,9 @@ export default function App() {
     } catch (error) {
       alert(error);
     }
+    setTimeout(() => {
+      scrollviewRef.current.scrollToEnd();
+    }, 500);
   }
 
   return (
@@ -130,7 +134,7 @@ export default function App() {
         <SafeAreaView style={myStyle.appscreen}>
           <AppHeader style={myStyle.header} />
           <View style={myStyle.body}>
-            <ScrollView>
+            <ScrollView ref={scrollviewRef}>
               <ListView list={getFilteredList()}></ListView>
             </ScrollView>
           </View>
